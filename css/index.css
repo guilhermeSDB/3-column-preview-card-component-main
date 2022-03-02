@@ -1,4 +1,58 @@
-@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, b, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -9,6 +63,12 @@ body {
   height: 100vh;
   font-size: 15px;
   color: #f2f2f2;
+}
+@media screen and (max-width: 1024px) {
+  body {
+    height: 100%;
+    padding: 2rem 0;
+  }
 }
 body main {
   width: 90%;
@@ -22,26 +82,96 @@ body main div.cards {
   display: flex;
   justify-content: center;
 }
-body main div.cards * {
-  margin: 1rem 0;
+@media screen and (max-width: 1024px) {
+  body main div.cards {
+    flex-direction: column;
+  }
 }
 body main div.cards div.card {
-  width: 20%;
-  height: 50%;
+  width: 15rem;
+  height: 24rem;
+  padding: 2rem;
+}
+@media screen and (max-width: 1024px) {
+  body main div.cards div.card {
+    width: 13rem;
+  }
+}
+body main div.cards div.card:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+@media screen and (max-width: 1024px) {
+  body main div.cards div.card:first-child {
+    border-radius: 0px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+}
+body main div.cards div.card:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+@media screen and (max-width: 1024px) {
+  body main div.cards div.card:last-child {
+    border-radius: 0px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}
+body main div.cards div.card img {
+  margin: 1rem 0;
+}
+body main div.cards div.card h1.title {
+  text-transform: uppercase;
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 2rem;
+  margin: 1rem 0;
+  color: #f2f2f2;
+}
+body main div.cards div.card p.desc {
+  font-family: "Lexend Deca", sans-serif;
+  margin: 2rem 0rem 1rem;
+  font-weight: 200 !important;
+  color: rgba(255, 255, 255, 0.75);
+  height: 7rem;
+  line-height: 23px;
 }
 body main div.cards div.card button {
   margin: 2rem 0;
-  padding: 1rem 1.5rem;
+  padding: 0.7rem 2rem;
   border-radius: 20px;
+  background-color: #f2f2f2;
+  outline: none;
+  border: none;
+  font-family: "Lexend Deca", sans-serif;
+  transition: 0.3s;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+}
+body main div.cards div.card button:hover {
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.75);
+  border: 2px solid rgba(255, 255, 255, 0.75);
 }
 body main div.cards .sedans {
   background: #e38826;
 }
+body main div.cards .sedans button {
+  color: #e38826;
+}
 body main div.cards .suvs {
   background: #006970;
 }
+body main div.cards .suvs button {
+  color: #006970;
+}
 body main div.cards .luxury {
   background: #004241;
+}
+body main div.cards .luxury button {
+  color: #004241;
 }
 body footer {
   color: black;

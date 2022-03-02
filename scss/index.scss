@@ -1,4 +1,5 @@
 @import 'styles';
+@import 'reset';
 
 *{
     padding: 0;
@@ -11,6 +12,8 @@ body{
     font-size: 15px;
     color: $VeryLightGray;
 
+    @media screen and (max-width: 1024px){ height: 100%; padding: 2rem 0;}
+
     main{
         width: 90%;
         height: 90%;
@@ -20,41 +23,97 @@ body{
         margin: 0 auto;
 
         div.cards{
-            display: flex;            
-            justify-content: center;           
+            display: flex;          
+            justify-content: center;  
+            
+            @media screen and (max-width: 1024px){ flex-direction: column;}
+            
+                div.card{
+                    width: 15rem;
+                    height: 24rem;
+                    padding: 2rem;
 
-            *{
-                margin: 1rem 0;
-            }
+                    @media screen and (max-width: 1024px){ width: 13rem; }
 
-            div.card{
-                width: 20%;
-                height: 50%;
-                h1{
+                    &:first-child{
+                        border-top-left-radius: $borderRadius;
+                        border-bottom-left-radius: $borderRadius;
 
-                }
+                        @media screen and (max-width: 1024px){ border-radius: 0px; border-top-left-radius: $borderRadius;  border-top-right-radius: $borderRadius;} 
+                    }
 
-                p{
+                    &:last-child{
+                        border-top-right-radius: $borderRadius;
+                        border-bottom-right-radius: $borderRadius;
 
-                }
+                        @media screen and (max-width: 1024px){ border-radius: 0px; border-bottom-left-radius: $borderRadius;  border-bottom-right-radius: $borderRadius;} 
+                    }
+    
+                    img{
+                        margin: 1rem 0;
+                    }
+    
+                    h1.title{
+                        text-transform: uppercase;
+                        font-family: $BigShouldersDisplay;
+                        font-size: 2rem;
+                        margin: 1rem 0;
+                        color: $VeryLightGray;
+                    }
+    
+                    p.desc{
+                        font-family: $LexendDeca;
+                        margin: 2rem 0rem 1rem;
+                        font-weight: 200!important;
+                        color: $TransparentWhite;
+                        height: 7rem;
+                        line-height: 23px;
+                    }
+    
+                    button{
+                        margin: 2rem 0;
+                        padding: .7rem 2rem;
+                        border-radius: 20px;
+                        background-color: $VeryLightGray;
+                        outline: none;
+                        border: none;
+                        font-family: $LexendDeca;
+                        transition: 0.3s;
+                        border: 2px solid $TransparentWhite;
 
-                button{
-                    margin: 2rem 0;
-                    padding: 1rem 1.5rem;
-                    border-radius: 20px;
-                }
-            }
+                        &:hover{
+                            cursor: pointer;
+                            transition: 0.3s;
+                            background-color: transparent;
+                            color: $TransparentWhite;
+                            border: 2px solid $TransparentWhite;
+                        }
+                    }
+                }    
 
+            
             .sedans{
                background: $BrightOrange;
+
+               button{
+                   color: $BrightOrange;
+               }
             }
 
             .suvs{
                 background: $DarkCyan;
+
+                button{
+                    color: $DarkCyan;
+                }
             }
 
             .luxury{
                 background: $VeryDarkCyan;
+
+                button{
+                    color: $VeryDarkCyan;
+                }
             }
         }
     }
